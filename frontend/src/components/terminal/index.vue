@@ -51,7 +51,9 @@ const newTerm = () => {
     term.value = new Terminal({
         lineHeight: 1.2,
         fontSize: 12,
-        fontFamily: "Monaco, Menlo, Consolas, 'Courier New', monospace",
+        // Line 55 Cralemon 于2025-2-13 11:31:25注释，为原代码
+        // fontFamily: "Monaco, Menlo, Consolas, 'Courier New', monospace",
+        fontFamily: "'Maple Mono NF CN', Menlo, Consolas, 'Courier New', monospace", // 更改后代码，替换为Maple Mono NF CN字体
         theme: {
             background: background,
         },
@@ -60,6 +62,9 @@ const newTerm = () => {
         scrollback: 1000,
         scrollSensitivity: 15,
         tabStopWidth: 4,
+        // Line 65, 66, 67 Cralemon 于2025-2-13 11:31:25添加，启用连字特性
+        rendererType: 'canvas', // 确保使用 canvas 渲染器
+        experimentalCharAtlas: 'dynamic', // 启用动态字符图集
     });
 };
 
